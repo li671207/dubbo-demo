@@ -1,6 +1,10 @@
 package com.lihl.gmall.service;
 
+import java.util.List;
+
+import com.lihl.gmall.bean.UserAddress;
+
 public interface OrderService {
 
-	void initOrder(String userId);
+	List<UserAddress> initOrder(String userId);
 }

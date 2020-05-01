@@ -1,6 +1,12 @@
 package com.lihl.gmall.bean;
 
-public class UserAddress {
+import java.io.Serializable;
+
+public class UserAddress implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String userAddress;
 	private String userId;
@@ -58,8 +64,10 @@ public class UserAddress {
 	public void setIsDefault(String isDefault) {
 		this.isDefault = isDefault;
 	}
-
-	
-	
+	@Override
+	public String toString() {
+		return "UserAddress [id=" + id + ", userAddress=" + userAddress + ", userId=" + userId + ", consignee="
+				+ consignee + ", phoneNum=" + phoneNum + ", isDefault=" + isDefault + "]";
+	}
 
 }
