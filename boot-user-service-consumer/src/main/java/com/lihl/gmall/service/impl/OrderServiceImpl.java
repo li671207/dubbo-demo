@@ -12,7 +12,8 @@ import com.lihl.gmall.service.UserService;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-	@Reference
+	
+	@Reference(url = "127.0.0.1:20881")//绕过注册中心,dubbo直连方式
 	private UserService userService;
 
 	public List<UserAddress> initOrder(String userId) {
