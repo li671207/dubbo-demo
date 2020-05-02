@@ -15,10 +15,14 @@
     <dubbo:protocol name="dubbo" port="20880" />
  
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.lihl.gmall.service.UserService" ref="userService" />
+    <dubbo:service interface="com.lihl.gmall.service.UserService" ref="userServiceImpl" version="1.0.0"/>
+    <!-- version:多版本 -->
+    <dubbo:service interface="com.lihl.gmall.service.UserService" ref="userServiceImpl2" version="2.0.0"/>
  
     <!-- 和本地bean一样实现服务 -->
-    <bean id="userService" class="com.lihl.gmall.service.impl.UserServiceImpl" />
+    <bean id="userServiceImpl" class="com.lihl.gmall.service.impl.UserServiceImpl" />
+    
+    <bean id="userServiceImpl2" class="com.lihl.gmall.service.impl.UserServiceImpl2" />
     
     <!-- 监控中心 -->
    <dubbo:monitor protocol="registry"></dubbo:monitor>

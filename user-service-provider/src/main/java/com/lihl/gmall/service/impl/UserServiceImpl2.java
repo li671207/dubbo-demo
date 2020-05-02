@@ -7,15 +7,15 @@ import java.util.concurrent.TimeUnit;
 import com.lihl.gmall.bean.UserAddress;
 import com.lihl.gmall.service.UserService;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl2 implements UserService {
 	private static int count = 0;
 
 	public List<UserAddress> getUserAddressList(String userId) {
 		//retries重试次数
 		System.out.println("UserServiceImpl----> " + count++);
 		//version多版本
-		System.out.println("UserServiceImpl----> old");
-		
+		System.out.println("UserServiceImpl----> new");
+
 		UserAddress userAddress1 = new UserAddress(1, "广东深圳", "001", "lihl", "13888888888", "Y");
 		UserAddress userAddress2 = new UserAddress(1, "四川成都", "002", "jww", "13999999999", "Y");
 
