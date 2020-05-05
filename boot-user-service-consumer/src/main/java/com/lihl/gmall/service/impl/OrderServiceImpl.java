@@ -15,7 +15,8 @@ import com.lihl.gmall.service.UserService;
 public class OrderServiceImpl implements OrderService {
 	
 //	@Reference(url = "127.0.0.1:20881")//绕过注册中心,dubbo直连方式
-	@Reference(loadbalance = RoundRobinLoadBalance.NAME)//负载均衡，默认随机
+//	@Reference(loadbalance = RoundRobinLoadBalance.NAME)//负载均衡，默认随机
+	@Reference(timeout = 1000)//高可用，服务降级
 	private UserService userService;
 
 	public List<UserAddress> initOrder(String userId) {
